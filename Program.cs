@@ -16,10 +16,13 @@ namespace Calculator_Console
             switch (Console.ReadLine())
             {
                 case "1": //Plus
+                    Console.Clear();
+                    Console.WriteLine("choice = Plus \n");
                     Console.WriteLine("Type a number, and then press Enter");
                     int num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Type another number, and then press Enter");
                     int num2 = Convert.ToInt32(Console.ReadLine());
+
                     Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2));
                     break;
             }
