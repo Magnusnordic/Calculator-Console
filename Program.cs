@@ -15,7 +15,13 @@ namespace Calculator_Console
             Console.Write("You choice? ");
             switch (Console.ReadLine())
             {
-
+                case "1": //Plus
+                    Console.WriteLine("Type a number, and then press Enter");
+                    int num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Type another number, and then press Enter");
+                    int num2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2));
+                    break;
             }
         }
     }
