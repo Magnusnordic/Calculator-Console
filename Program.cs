@@ -6,6 +6,13 @@ namespace Calculator_Console
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Console Calculator in C#\r");
+            Console.WriteLine("------------------------\n");
+
+            switch (Console.ReadLine())
+            {
+
+            }
         }
     }
 }
