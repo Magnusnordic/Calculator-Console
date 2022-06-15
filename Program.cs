@@ -9,7 +9,6 @@ namespace Calculator_Console
             //Welcomme Message
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
-
             //Switch
             Console.WriteLine("Pick you choice\n" + "[0] settings \n[1] = Plus" + "\n");
             Console.Write("You choice? ");
