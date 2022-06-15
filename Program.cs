@@ -22,7 +22,6 @@ namespace Calculator_Console
                     Console.Clear();
                     Console.WriteLine("choice = Add");
                     Console.WriteLine("------------------------\n");
-
                     Console.WriteLine("Type a number, and then press Enter");
                     int num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Type another number, and then press Enter");
@@ -31,7 +30,7 @@ namespace Calculator_Console
                     Console.WriteLine("\n" + "More Add? \n [1] = Yes \n [2] = No");
                     Console.Write("You choice? ");
                     int add1 = Convert.ToInt32(Console.ReadLine());
-                    if(add1 == 1)
+                    if(add1 == 1) //add num3
                     {
                         Console.Clear();
                         Console.WriteLine("You number " + $"{num1} + {num2}" + "\n");
@@ -41,7 +40,7 @@ namespace Calculator_Console
                         switch (Console.ReadLine())
                         {
                             case "1":
-                                System.Diagnostics.Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+                                restart();
                                 break;
                             case "2":
                                 Environment.Exit(0);
@@ -52,25 +51,25 @@ namespace Calculator_Console
                     {
                         Console.WriteLine($"Your result: {num1} + {num2}     = " + (num1 + num2));
                         //Restart
-                        settings();
+                        restart();
                     }
                     break;
                 case "2": //Subtract
                     Console.Clear();
                     Console.WriteLine("choice = Add");
                     Console.WriteLine("------------------------\n");
-
                     Console.WriteLine("Type a number, and then press Enter");
                     //int num1 = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Type another number, and then press Enter");
                     //int num2 = Convert.ToInt32(Console.ReadLine());
                     break;
             }
+            Console.Clear();
+            Main();
         }
-        
-        public static void settings()
+        public static void restart()
         {
-            Console.WriteLine("\n" + "Will you like to restart the Calculator" + "\n [1] Restart" + "\n [2] Color" + "\n [3] Close");
+            Console.WriteLine("\n" + "Reset" + "\n [1] Restart" + "\n [2] Settings" + "\n [3] Close");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -78,10 +77,54 @@ namespace Calculator_Console
                     Main();
                     break;
                 case "2":
+                    settings();
+                    break;
                 case "3":
-                    Environment.Exit(0);
+                    Environment.Exit(1);
                     break;
             }
+        }
+        public static void settings()
+        {
+            Console.WriteLine("\n" + "Settings" + "\n [1] Restart" + "\n [2] Color" + "\n [3] Close");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.Clear();
+                    Main();
+                    break;
+                case "2":
+                    colorconsole();
+                    break;
+                case "3":
+                    Environment.Exit(1);
+                    break;
+            }
+            Console.Clear();
+            settings();
+        }
+        public static void colorconsole()
+        {
+            Console.Clear();
+            Console.WriteLine("Tab: Settings/Color Console");
+            Console.WriteLine("\n" + "Chance console color\n");
+            Console.WriteLine("[1] Default Color" + "\n[2] Rød");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Clear();
+                    Main();
+                    break;
+                case "2":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Clear();
+                    Main();
+                    break;
+            }
+            Environment.Exit(1);
         }
     }
 }
