@@ -10,7 +10,8 @@ namespace Calculator_Console
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
             //Switch
-            Console.WriteLine("Pick you choice\n" + "[0] settings \n[1] = Plus" + "\n");
+            Console.WriteLine("Pick you choice\n" + "[0] = settings");
+            Console.WriteLine("[1] = Plus" + "\n[99] moms regn");
             Console.Write("You choice? ");
             switch (Console.ReadLine())
             {
@@ -48,7 +49,7 @@ namespace Calculator_Console
 
                     } else if(add1 == 2)
                     {
-                        Console.WriteLine($"Your result: {num1} + {num2}     = " + (num1 + num2));
+                        Console.WriteLine($"Your result: {num1} + {num2} = " + (num1 + num2));
                         //Restart
                         restart();
                     }
@@ -62,9 +63,37 @@ namespace Calculator_Console
                     Console.WriteLine("Type another number, and then press Enter");
                     //int num2 = Convert.ToInt32(Console.ReadLine());
                     break;
+                case "99":
+                    moms();
+                    break;
             }
             Console.Clear();
             Main();
+        }
+        public static void moms()
+        {
+            Console.Clear();
+            Console.WriteLine("choice = Moms");
+            Console.WriteLine("------------------------\n");
+            Console.WriteLine("[1] = Calculate Incl. VAT" + "\n[2] = Calculate Excl. VAT");
+            Console.Write("You choice? ");
+            switch (Console.ReadLine())
+            {
+                case "1": //læg moms på
+                    Console.WriteLine("\nInsætte din pris du vil læg moms på");
+                    int prisumoms = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("din pris med moms er " + (prisumoms * 1.25));
+                    Console.WriteLine("Din moms der regns med er " + ((prisumoms * 1.25) - prisumoms));
+                    restart();
+                    break;
+                case "2":
+                    Console.WriteLine("\nInsætte din pris du vil udregn moms på");
+                    int prismmoms = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("din pris med moms er " + (prismmoms / 1.25));
+                    Console.WriteLine("Din moms der regns fra er " + (prismmoms - (prismmoms / 1.25)));
+                    restart();
+                    break;
+            }
         }
         public static void restart()
         {
