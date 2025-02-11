@@ -151,6 +151,12 @@ namespace Calculator_Console
                     Console.Clear();
                     Main();
                     break;
+                case "3":
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Clear();
+                    Main();
+                    break;
             }
             Environment.Exit(1);
         }
